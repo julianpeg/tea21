@@ -44,16 +44,15 @@ auto main(int argc, char **argv) -> int
     auto start = std::chrono::system_clock::now();
     std::sort(einVector.begin(), einVector.end());
     auto end = std::chrono::system_clock::now();
-    auto elapsed = end - start;
-    fmt::print("Benoetigte Zeit: {}\n", elapsed);
-
+    //auto elapsed = end - start;
+    auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 
     printf("nun nach size sortiert: \n");
     for (int j = 0; j < sizeof(einVector); j++ )
     {
         fmt::print("{}\n", einVector[j]);
     }
-    
+    fmt::print("Benoetigte Zeit: {}\n", elapsed);
     /*
     //Alternative
     for (int value : einVector) 
