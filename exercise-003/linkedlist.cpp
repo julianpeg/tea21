@@ -14,7 +14,9 @@ bool LinkedList::insert_tail(LinkedListNode *node)
   if (nullptr == node) {
     return ret;
   }
-  // insert your code here....
+  node->pNext = nullptr;                //siehe s36. nullptr ist der letzte Zeiger ins nichts. 
+  LinkedList::m_tail->pNext = node;     //der pnext zeiger des alten letzten elements zeigt auf die adresse von node
+  LinkedList::m_tail = node;            //der zeiger auf das letzten elements zeigt jetzt auf die Adresse von Node
   return ret;
 }
 
@@ -24,7 +26,8 @@ bool LinkedList::insert_head(LinkedListNode *node)
   if (nullptr == node) {
     return ret;
   }
-  // insert your code here....
+  node->pNext = LinkedList::m_head;
+  LinkedList::m_head = node;
   return ret;
 }
 
