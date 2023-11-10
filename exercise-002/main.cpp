@@ -53,7 +53,6 @@ auto main(int argc, char **argv) -> int
     {
         fmt::print("{}\n", einVector[j]);
     }
-
     /*
     //Alternative
     for (int value : einVector) 
