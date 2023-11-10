@@ -54,7 +54,7 @@ auto main(int argc, char **argv) -> int
     }
     fmt::print("Benoetigte Zeit: {}\n", elapsed);
     /*
-    //Alternative
+    //Alternative BEVORZUGT!!!
     for (int value : einVector) 
     {
         fmt::print("{}\n", value);
