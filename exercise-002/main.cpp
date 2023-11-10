@@ -39,7 +39,31 @@ auto main(int argc, char **argv) -> int
         einVector[i] = rand() % 100 + 1;
         fmt::print("{}\n", einVector[i]);
     }
-    fmt::print("count = {}", count); //count ausgeben
+
+    //sortiert
+    auto start = std::chrono::system_clock::now();
+    std::sort(einVector.begin(), einVector.end());
+    auto end = std::chrono::system_clock::now();
+    auto elapsed = end - start;
+    fmt::print("Benoetigte Zeit: {}\n", elapsed);
+
+
+    printf("nun nach size sortiert: \n");
+    for (int j = 0; j < sizeof(einVector); j++ )
+    {
+        fmt::print("{}\n", einVector[j]);
+    }
+
+    /*
+    //Alternative
+    for (int value : einVector) 
+    {
+        fmt::print("{}\n", value);
+    }
+    */
+
+
+    //fmt::print("count = {}", count); //count ausgeben
 
     return 0; /* exit gracefully*/
 }
