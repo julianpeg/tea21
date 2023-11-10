@@ -33,5 +33,13 @@ auto main(int argc, char **argv) -> int
     /* INSERT YOUR CODE HERE */
     app.add_option("-c,--count", count );
 
+    std::vector<int> einVector(count);
+    for (int i = 0; i < count; ++i) 
+    {
+        einVector[i] = rand() % 100 + 1;
+        fmt::print("{}\n", einVector[i]);
+    }
+    fmt::print("count = {}", count); //count ausgeben
+
     return 0; /* exit gracefully*/
 }
